@@ -1,0 +1,41 @@
+<p>
+   search-bar works!
+</p>
+
+<ul>
+   <li *ngFor="let c of characters">
+      {{c}}
+   </li>
+</ul>
+
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+
+<ul>
+   <li *ngFor="let c of characters | filter : searchText">
+      {{c}}
+   </li>
+</ul>
+
+<ul>
+   <li *ngFor="let tag of tags ">
+      {{tag}}
+   </li>
+</ul>
+
+
+
+
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+<p> tags </p>
+<ul>
+<li *ngFor="let tag of tags| filter : searchText">
+{{tag}}
+</li>
+</ul>
+
+
+
+
+<div style="text-align:center">
+   <button (click)="getInfo()">Get Info </button> 
+   {{fetchedRecipe|json}} -->

@@ -1,0 +1,53 @@
+<div class="containe color-dark">
+   <div class="col">
+      <h2>Add a Link</h2>
+   </div>
+</div>
+<div class="container color-light">
+   <form [formGroup]="linksForm" (submit)="onSubmitAddArticle(linksForm)" >
+   <div>
+      <label for="title"> Title:
+      <input formControlName="title"    placeholder="Title of your choice" class="inputs" required>
+      </label>
+      <div [ngClass]="{ 'is-invalid': submitted && linksForm.title.errors }" *ngIf="!linksForm.controls['title']?.valid && linksForm.controls['title']?.touched">
+      <p  class="alert alert-danger">Please fill out the Title of your choise</p>
+   </div>
+</div>
+<div>
+   <label for="tag"> Tag:
+   <input formControlName="tag"  placeholder="Add a tag" class="inputs" required>
+
+   </label>                                                                           
+   <div [ngClass]="{ 'is-invalid': submitted && linksForm.contorls.tag.errors }" *ngIf= "!linksForm.controls.tag.errors?.mismatch && linksForm.controls.tag.errors?.touched">
+      <p  class="alert alert-danger">choose coresponding tag</p>
+   </div>
+</div>
+<div>
+   <label for="link"> Link:
+   <input formControlName="link" placeholder=" Link" class="inputs" required>
+   </label>
+   <div class="error" *ngIf="!linksForm.controls['link'].valid && linksForm.controls['link'].touched">
+  
+      <p class="alert alert-danger"> Fill out the link </p>
+   </div>
+</div>
+<button type="submit" [disabled]="!linksForm.valid" (click)="onSubmitAddArticle(linksForm.value)" class="btn">
+Submit link
+</button>
+<p>Form value: {{ linksForm.value | json }}</p>
+<p>Is title valid: {{ linksForm.controls['title'].status  | json  }}</p>
+<p>Is tag valid: {{ linksForm.controls['tag'].status   | json  }}</p>
+<p>Is link valid: {{ linksForm.controls['link'].status   | json  }}</p>
+<p>Is form valid: {{ linksForm.status  | json  }}</p>
+<br>
+</form>
+</div>
+{{nothing | json}
+
+<div class="col">
+<div class="life-container" *ngFor="let v of sortedArticles()">
+   <app-articleC [article]="v"></app-articleC>
+   <!-- <span class="hover-cursor text-danger pull-left" (click)="onDelete(v)">
+      <i class="fa fa-trash-o fa-lg"></i>
+      </span> -->
+</div>

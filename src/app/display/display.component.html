@@ -1,0 +1,44 @@
+<p>
+   display works!
+</p>
+<page-user> </page-user>
+<create-link-root  class = "container"></create-link-root>
+<app-search-bar> </app-search-bar>
+
+<h3> Async pipes goes here </h3>
+<div *ngFor="let l of Links | async " >
+  <mat-card class="example-card" >
+    <mat-card-header>
+      
+      <div mat-card-avatar class="example-header-image"></div>
+      <a href="{{l.link}} ">
+      <mat-card-title><h3>{{ l.title}}</h3></mat-card-title>
+      </a>
+    </mat-card-header>
+     <mat-card-content>
+    <p >
+      {{l.id}}
+      {{ l.tag }}
+    </p>
+
+     <p >
+      {{ l.link }}
+    </p>
+    <button (click)= "deleteEntity(l)"> Delete </button>
+  </mat-card-content>
+  </mat-card>
+  </div>
+  <br>        
+      <!--<div>
+         <h3> {{ l.tag }} </h3>
+      </div>
+      <div>
+         <h3> {{ l.link}} </h3>
+      </div>
+      <div  style="background-color: rgb(146, 187, 214); color:red;">
+         <div class="list-group-item d-flex justify-content-between align-items-center">
+            Points
+         </div>
+      </div> -->
+      
+
