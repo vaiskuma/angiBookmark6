@@ -1,8 +1,3 @@
-# Firebase Authentication with Angular 6
-
-Thanks to [AngularTemplates](https://github.com/AngularTemplates) team for original version of this project developed with Angular 5. 
-you can get it here: https://github.com/AngularTemplates/firebase-authentication-with-angular-5
-
 
 ## Installation
 
@@ -23,5 +18,4 @@ you can get it here: https://github.com/AngularTemplates/firebase-authentication
 
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-
-![](https://s3-us-west-2.amazonaws.com/angular-templates/tutorials/firebase-authentication-with-angular/firebase-tutorial-login-screenshot.png)
+Add Node.js server code + description
